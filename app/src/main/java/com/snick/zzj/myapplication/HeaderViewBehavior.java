@@ -54,10 +54,15 @@ public class HeaderViewBehavior extends CoordinatorLayout.Behavior<ImageView> {
         } else if(halfOfDis > Math.abs(child.getTranslationY() + getHeaderOffsetRange() + getHeaderOffsetRangeHideToolBar())) {
             Log.d(TAG,"direct to top");
             child.setTranslationY(0-getHeaderOffsetRange()-getHeaderOffsetRangeHideToolBar());
+        } else if(halfOfDis < child.getTranslationY()) {
+            child.setTranslationY(0);
         }
         //当滑动到顶部时，继续往上滑应该是不允许滑动，但是向下应该是可以滑动
         //但是我们在onStartNestedScroll中没法判断滑动的方向，因此只好在这里判断了。
-        if(dy <0 && child.getTranslationY() == 0-getHeaderOffsetRange()-getHeaderOffsetRangeHideToolBar())
+
+        Log.d(TAG,"Y:"+child.getTranslationY());
+        if((dy>0&&child.getTranslationY() == 0-getHeaderOffsetRange()-getHeaderOffsetRangeHideToolBar()) ||
+                (dy<0&&child.getTranslationY() == 0))
             consumed[1] = 0;
         else
             consumed[1] = dy;
