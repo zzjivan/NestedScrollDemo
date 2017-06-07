@@ -6,4 +6,4 @@
 在到达顶部或者底部时，直接setTranslation(0 或者 max)，可解决2中的问题。
 
 效果图：
-![Demo](https://github.com/zzjivan/NestedScrollDemo/blob/master/demo.gif)  
+![Demo](https://github.com/zzjivan/NestedScrollDemo/raw/master/demo.gif)  
