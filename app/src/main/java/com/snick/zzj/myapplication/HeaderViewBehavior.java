@@ -24,9 +24,7 @@ public class HeaderViewBehavior extends CoordinatorLayout.Behavior<ImageView> {
 
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, ImageView child, View directTargetChild, View target, int nestedScrollAxes) {
-        //拦截垂直方向上的滚动事件且当前状态是打开的并且还可以继续向上收缩
         boolean result = canScroll(child, 0);
-        Log.d(TAG,"onStartScroll:"+result);
         return result;
     }
 

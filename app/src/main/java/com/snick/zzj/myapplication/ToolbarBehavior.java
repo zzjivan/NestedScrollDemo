@@ -43,16 +43,6 @@ public class ToolbarBehavior extends CoordinatorLayout.Behavior<FrameLayout> {
         return false;
     }
 
-    @Override
-    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, FrameLayout child, View directTargetChild, View target, int nestedScrollAxes) {
-        return true;
-    }
-
-    @Override
-    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, FrameLayout child, View target, int dx, int dy, int[] consumed) {
-        child.setTranslationY(2);
-    }
-
     private boolean isDependOn(View dependency) {
         return dependency != null && dependency.getId() == R.id.recycler;
     }
